@@ -14,11 +14,11 @@ win (replace lua paths with your own)
 
 ### use
 ```lua
-    require("lmd5")
+require("lmd5")
 
-    local md5 = md5.new()
-    md5:update("abc")
-    print(md5:hexdigest())
+local md5 = md5.new()
+md5:update("abc")
+print(md5:hexdigest())
 ```
 
 thats it!

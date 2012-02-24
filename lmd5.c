@@ -66,7 +66,7 @@ static const luaL_reg R[] = {
     { NULL,        NULL          }
 };
 
-EXPORT int luaopen_luamd5(lua_State* L) {
+EXPORT int luaopen_lmd5(lua_State* L) {
     luaL_openlib(L, "md5", R, 0);
     luaL_newmetatable(L, "md5.metadata");
     lua_pushliteral(L, "__index");

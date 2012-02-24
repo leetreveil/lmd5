@@ -59,34 +59,7 @@ static int _hexdigest(lua_State* L) {
     return 1;
 }
 
-
-
-static int _test(lua_State* L) {
-    const char* input = lua_tostring(L, -1);
-
-    unsigned char result[MD5LEN];
-    int cbHash = MD5LEN;
-    char rgbDigits[] = "0123456789abcdef";
-    int i;
-    char output[33];
-
-    MD5_CTX ctx;
-    MD5_Init(&ctx);
-    MD5_Update(&ctx, input, strlen(input));
-    MD5_Final(result, &ctx);
-
-    for (i = 0; i < cbHash; i++)
-    {
-        sprintf(&output[i*2], "%c%c", rgbDigits[result[i] >> 4], rgbDigits[result[i] & 0xf]);
-    }
-
-
-    lua_pushstring(L, output);
-    return 1;
-}
-
 static const luaL_reg R[] = {
-    { "abacus",    _test         },
     { "new",       _new          },
     { "update",    _update       },
     { "hexdigest", _hexdigest    },
@@ -100,16 +73,4 @@ EXPORT int luaopen_luamd5(lua_State* L) {
     lua_pushvalue(L, -3);
     lua_rawset(L, -3); 
     return 1;
-}
-
-int main(int argc, char* argv[]) {
-    lua_State* L = lua_open();
-
-    luaL_newmetatable(L, "md5.metadata");
-
-    _new(L);
-    _update(L);
-
-    lua_close(L);
-    return 0;
 }

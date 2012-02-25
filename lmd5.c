@@ -35,8 +35,9 @@ static int _new(lua_State* L) {
 
 static int _update(lua_State* L) {
     const char* input = lua_tostring(L, -1);
+    size_t len = lua_strlen(L, -1); 
     MD5_CTX* c = getcontext(L, 1);
-    MD5_Update(c, input, strlen(input));
+    MD5_Update(c, input, len);
     return 1;
 }
 

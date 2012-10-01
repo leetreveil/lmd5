@@ -6,7 +6,7 @@ build
 
 osx/unix
 
-    gcc -Wall -shared -fPIC -o lmd5.so -I/usr/local/include -llua lmd5.c
+    make
 
 win (replace lua paths with your own)
 

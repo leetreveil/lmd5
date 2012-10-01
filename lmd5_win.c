@@ -4,7 +4,7 @@
 
 int MD5_Init(MD5_CTX* ctx)
 {
-	DWORD dwStatus;
+    DWORD dwStatus;
 
     if (!CryptAcquireContext(&ctx->prov, NULL, NULL, PROV_RSA_FULL,
                              CRYPT_VERIFYCONTEXT))
@@ -25,7 +25,7 @@ int MD5_Init(MD5_CTX* ctx)
 
 int MD5_Update(MD5_CTX* ctx, const void* data, unsigned int len)
 {
-	DWORD dwStatus;
+    DWORD dwStatus;
 
     if (!CryptHashData(ctx->hash, (BYTE*)data, len, 0))
     {

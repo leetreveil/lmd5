@@ -1,11 +1,12 @@
 language: c
 
 before_install:
-  - sudo apt-get install lua5.1 liblua5.1-dev -y
+  - sudo apt-get install lua5.1 liblua5.1-dev libssl-dev -y
   - sudo apt-get install locate -y
   - sudo updatedb
   - locate lua.h
   - locate liblua
+  - locate crypto
 
 script:
   - make && make test

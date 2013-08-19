@@ -1,2 +1,3 @@
 *\build
 *.obj
+lmd5.so

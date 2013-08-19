@@ -3,6 +3,7 @@ language: c
 before_install:
   - sudo apt-get install lua5.2 liblua50-dev -y
   - sudo apt-get install locate -y
+  - sudo updatedb
   - locate lua.h
 
 script:

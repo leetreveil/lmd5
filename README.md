@@ -1,5 +1,6 @@
 lmd5
 ===
+cross platform md5 library for lua
 
 build
 -----------------

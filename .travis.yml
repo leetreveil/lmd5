@@ -5,6 +5,7 @@ before_install:
   - sudo apt-get install locate -y
   - sudo updatedb
   - locate lua.h
+  - locate liblua
 
 script:
   - make && make test
